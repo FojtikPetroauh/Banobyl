@@ -1,26 +1,38 @@
 using UnityEngine;
+using System.Collections; 
 
 public class CollectableItem : MonoBehaviour
 {
     public enum ItemType { Berries, Water, Wood }
     
-    [Header("Resource settings")]
+    [Header("Settings")]
     public ItemType type;
     public int amount = 1;
-    public GameObject visualPrompt; // objekt na pickup (E)
+    public GameObject visualPrompt; 
+
+    [Header("Respawn")]
+    public bool canRespawn = true;
+    public float respawnTime = 180f; 
 
     private bool isPlayerInRange;
+    private bool isCollected = false; 
     private SimpleInventory playerInventory;
+
+    // schovat objekt
+    private SpriteRenderer spriteRenderer;
+    private Collider2D itemCollider;
 
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        itemCollider = GetComponent<Collider2D>();
+        
         if (visualPrompt) visualPrompt.SetActive(false);
     }
 
     void Update()
     {
-        
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
+        if (!isCollected && isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
             PickUp();
         }
@@ -32,7 +44,7 @@ public class CollectableItem : MonoBehaviour
         {
             isPlayerInRange = true;
             playerInventory = collision.GetComponent<SimpleInventory>();
-            if (visualPrompt) visualPrompt.SetActive(true);
+            if (!isCollected && visualPrompt) visualPrompt.SetActive(true);
         }
     }
 
@@ -50,7 +62,31 @@ public class CollectableItem : MonoBehaviour
         if (playerInventory != null)
         {
             playerInventory.AddResource(type.ToString(), amount);
-            Destroy(gameObject);
+            
+            if (canRespawn)
+            {
+                StartCoroutine(RespawnRoutine());
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
+    }
+
+    // časovač
+    IEnumerator RespawnRoutine()
+    {
+        isCollected = true;
+        
+        spriteRenderer.enabled = false;
+        itemCollider.enabled = false;
+        if (visualPrompt) visualPrompt.SetActive(false);
+
+        yield return new WaitForSeconds(respawnTime);
+
+        spriteRenderer.enabled = true;
+        itemCollider.enabled = true;
+        isCollected = false;
     }
 }
