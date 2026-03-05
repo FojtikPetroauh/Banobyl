@@ -30,6 +30,8 @@ public class SurvivalManager : MonoBehaviour
 
     public UnityEvent OnPlayerDied;
 
+    public DayNightCycle timeManager;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -42,7 +44,10 @@ public class SurvivalManager : MonoBehaviour
     {
         currentHunger -= hungerDepletionRate * Time.deltaTime;
         currentThirst -= thirstDepletionRate * Time.deltaTime;
-        currentWarmth -= warmthDepletionRate * Time.deltaTime;
+        if(timeManager != null && timeManager.timeOfDay > 0.3f && timeManager.timeOfDay < 0.7f)
+        {
+            currentWarmth -= warmthDepletionRate * Time.deltaTime;
+        }
 
         if (currentHunger < 0) currentHunger = 0;
         if (currentThirst < 0) currentThirst = 0;
