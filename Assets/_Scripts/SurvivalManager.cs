@@ -44,9 +44,22 @@ public class SurvivalManager : MonoBehaviour
     {
         currentHunger -= hungerDepletionRate * Time.deltaTime;
         currentThirst -= thirstDepletionRate * Time.deltaTime;
-        if(timeManager != null && timeManager.timeOfDay > 0.3f && timeManager.timeOfDay < 0.7f)
+        
+        bool isNight = (timeManager != null && timeManager.timeOfDay > 0.3f && timeManager.timeOfDay < 0.7f);
+        if(timeManager != null && timeManager.isWinter)
+        {
+            float winterMultiplier = isNight ? 2f : 1f;
+            currentWarmth -= (warmthDepletionRate * winterMultiplier) * Time.deltaTime;
+        } else if (isNight)
         {
             currentWarmth -= warmthDepletionRate * Time.deltaTime;
+        } else
+        {
+            currentWarmth += (warmthDepletionRate * 2f) * Time.deltaTime;
+            if(currentWarmth > maxWarmth)
+            {
+                currentWarmth = maxWarmth;
+            }
         }
 
         if (currentHunger < 0) currentHunger = 0;

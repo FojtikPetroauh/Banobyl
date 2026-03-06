@@ -3,11 +3,15 @@ using UnityEngine.UI;
 
 public class DayNightCycle : MonoBehaviour
 {
-    [Header("Nastavení")]
+    [Header("Settings")]
     public float dayDuration = 30f; 
     public Gradient dayNightColor;   
     
-    [Header("Propojení")]
+    [Header("Winter settings")]
+    public int daysBeforeWinter = 3; 
+    public Gradient winterColor;     
+    public bool isWinter = false;    
+
     public Image overlayImage;       
 
     [Header("Info")]
@@ -18,10 +22,7 @@ public class DayNightCycle : MonoBehaviour
 
     void Update()
     {
-        
         timer += Time.deltaTime;
-
-
         timeOfDay = timer / dayDuration;
 
         if (timer >= dayDuration)
@@ -30,9 +31,21 @@ public class DayNightCycle : MonoBehaviour
             daysPassed++;
         }
 
+        if (daysPassed >= daysBeforeWinter)
+        {
+            isWinter = true;
+        }
+
         if (overlayImage != null)
         {
-            overlayImage.color = dayNightColor.Evaluate(timeOfDay);
+            if (isWinter && winterColor != null)
+            {
+                overlayImage.color = winterColor.Evaluate(timeOfDay); 
+            }
+            else
+            {
+                overlayImage.color = dayNightColor.Evaluate(timeOfDay); 
+            }
         }
     }
 }
