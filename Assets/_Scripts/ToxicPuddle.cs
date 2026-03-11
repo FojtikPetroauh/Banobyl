@@ -5,16 +5,25 @@ public class ToxicPuddle : MonoBehaviour
     [Header("Settings")]
     public float damagePerSecond = 10f; 
 
+    [Header("Audio")]
+    private AudioSource puddleAudio;
+
+    [Header("Audio settings")]
+    public float soundCooldown = 1.5f;
+    private float lastSoundTime = -100f;
+
     private bool isPlayerInside = false;
     private SurvivalManager playerSurvival;
 
+    void Start()
+    {
+        puddleAudio = GetComponent<AudioSource>();
+    }
     void Update()
     {
         if (isPlayerInside && playerSurvival != null)
         {
             playerSurvival.currentHealth -= damagePerSecond * Time.deltaTime;
-            
-
         }
     }
 
@@ -25,6 +34,11 @@ public class ToxicPuddle : MonoBehaviour
             isPlayerInside = true;
             playerSurvival = collision.GetComponent<SurvivalManager>();
             Debug.Log("Entered toxic puddle.");
+            if(puddleAudio != null && Time.time >= lastSoundTime + soundCooldown)
+            {
+               puddleAudio.Play(); 
+               lastSoundTime = Time.time;
+            } 
         }
     }
 
