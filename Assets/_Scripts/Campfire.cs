@@ -6,6 +6,9 @@ public class Campfire : MonoBehaviour
     public float burnDuration = 60f; 
     public float warmthReplenishRate = 15f; 
 
+    [Header("Audio")]
+    public AudioSource fireAudio;
+
     public GameObject fireVisuals; 
     public GameObject promptE;     
 
@@ -65,13 +68,16 @@ public class Campfire : MonoBehaviour
         burnTimer = burnDuration;
         if (fireVisuals) fireVisuals.SetActive(true); 
         if (promptE) promptE.SetActive(false); 
+        if (fireAudio != null) fireAudio.Play();
     }
 
     private void ExtinguishFire()
     {
         isLit = false;
         if (fireVisuals) fireVisuals.SetActive(false); 
-        if (isPlayerInRange && promptE) promptE.SetActive(true); 
+        if (isPlayerInRange && promptE) promptE.SetActive(true);
+        if (fireAudio != null) fireAudio.Stop();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

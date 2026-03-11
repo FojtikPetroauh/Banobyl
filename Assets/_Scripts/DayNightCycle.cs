@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class DayNightCycle : MonoBehaviour
 {
     [Header("Settings")]
-    public float dayDuration = 30f; 
+    public float dayDuration = 120f; 
     public Gradient dayNightColor;   
     
     [Header("Winter settings")]
