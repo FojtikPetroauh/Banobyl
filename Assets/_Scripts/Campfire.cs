@@ -25,6 +25,7 @@ public class Campfire : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) return;
         
         if (isPlayerInRange && !isLit && Input.GetKeyDown(KeyCode.E))
         {

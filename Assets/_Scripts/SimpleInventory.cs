@@ -11,6 +11,8 @@ public class SimpleInventory : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) return;
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             if(berriesCount > 0)

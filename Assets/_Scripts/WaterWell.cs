@@ -24,6 +24,7 @@ public class WaterWell : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) return;
 
         if (!isReady)
         {
