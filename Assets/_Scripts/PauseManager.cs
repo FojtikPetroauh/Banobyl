@@ -5,6 +5,7 @@ public class PauseManager : MonoBehaviour
 {
     public GameObject pausePanel;
     public GameObject gameOverPanel;
+    public GameObject settingsPanel;
 
     private bool isPaused = false;
 
@@ -45,6 +46,7 @@ public class PauseManager : MonoBehaviour
         if (pausePanel != null) pausePanel.SetActive(false);
         Time.timeScale = 1f; 
         isPaused = false;
+        if (settingsPanel != null) settingsPanel.SetActive(false);
     }
 
     public void LoadMainMenu()

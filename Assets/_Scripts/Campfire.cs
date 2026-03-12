@@ -9,6 +9,9 @@ public class Campfire : MonoBehaviour
     [Header("Audio")]
     public AudioSource fireAudio;
 
+    [Header("Effects")]
+    public ParticleSystem fireParticles;
+
     public GameObject fireVisuals; 
     public GameObject promptE;     
 
@@ -69,6 +72,7 @@ public class Campfire : MonoBehaviour
         if (fireVisuals) fireVisuals.SetActive(true); 
         if (promptE) promptE.SetActive(false); 
         if (fireAudio != null) fireAudio.Play();
+        if (fireParticles != null) fireParticles.Play();
     }
 
     private void ExtinguishFire()
@@ -77,6 +81,7 @@ public class Campfire : MonoBehaviour
         if (fireVisuals) fireVisuals.SetActive(false); 
         if (isPlayerInRange && promptE) promptE.SetActive(true);
         if (fireAudio != null) fireAudio.Stop();
+        if (fireParticles != null) fireParticles.Stop();
 
     }
 
