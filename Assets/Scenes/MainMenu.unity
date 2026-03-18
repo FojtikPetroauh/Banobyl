@@ -1906,6 +1906,7 @@ GameObject:
   - component: {fileID: 511171564}
   - component: {fileID: 511171565}
   - component: {fileID: 511171566}
+  - component: {fileID: 511171567}
   m_Layer: 0
   m_Name: _MenuManager
   m_TagString: Untagged
@@ -2073,6 +2074,21 @@ MonoBehaviour:
   - {fileID: 99469860}
   - {fileID: 1262963210}
   tutorialPanel: {fileID: 1193307881}
+--- !u!114 &511171567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511171561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ce5b218deeede47b669231b04b4c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KeybindUI
+  interactText: {fileID: 248100656}
+  eatText: {fileID: 1424245505}
+  drinkText: {fileID: 1387666638}
 --- !u!1 &529289004
 GameObject:
   m_ObjectHideFlags: 0
@@ -4142,7 +4158,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1138146202}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 511171567}
+        m_TargetAssemblyTypeName: KeybindUI, Assembly-CSharp
+        m_MethodName: StartRebind
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Drink
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1138146202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6139,6 +6167,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755913239}
   m_CullTransparentMesh: 1
+--- !u!1 &1801139441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801139443}
+  - component: {fileID: 1801139442}
+  m_Layer: 0
+  m_Name: _KeyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1801139442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801139441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ffebf01120ab284c9f398919da1ebc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KeyManager
+  interactKey: 101
+  eatKey: 49
+  drinkKey: 50
+--- !u!4 &1801139443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801139441}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 894.4536, y: 560.66486, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1805434548
 GameObject:
   m_ObjectHideFlags: 0
@@ -6323,7 +6398,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1820038676}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 511171567}
+        m_TargetAssemblyTypeName: KeybindUI, Assembly-CSharp
+        m_MethodName: StartRebind
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Eat
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1820038676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6981,7 +7068,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2025172838}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 511171567}
+        m_TargetAssemblyTypeName: KeybindUI, Assembly-CSharp
+        m_MethodName: StartRebind
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Interact
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2025172838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7161,3 +7260,4 @@ SceneRoots:
   - {fileID: 689439989}
   - {fileID: 138188827}
   - {fileID: 511171563}
+  - {fileID: 1801139443}

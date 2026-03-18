@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1102893378411813118}
   - component: {fileID: 4525997699414282890}
   - component: {fileID: 8826117269074810749}
+  - component: {fileID: 8432238825248412976}
   m_Layer: 20
   m_Name: Prompt
   m_TagString: Untagged
@@ -179,6 +180,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4525997699414282890}
   m_maskType: 0
+--- !u!114 &8432238825248412976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2663596566077119437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a19a60e905dd344a8c83378dd4f695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DynamicPrompt
 --- !u!1 &5780353014431025285
 GameObject:
   m_ObjectHideFlags: 0

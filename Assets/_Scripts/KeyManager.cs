@@ -7,10 +7,15 @@ public class KeyManager : MonoBehaviour
 
     [Header("Current keybinds")]
     public KeyCode interactKey = KeyCode.E;
-    public KeyCode eatKey = KeyCode.Alpha1;   
-    public KeyCode drinkKey = KeyCode.Alpha2; 
+    public KeyCode eatKey = KeyCode.Alpha1;
+    public KeyCode drinkKey = KeyCode.Alpha2;
 
     void Awake()
+    {
+        InitializeManager();
+    }
+
+    public void InitializeManager()
     {
         if (instance == null)
         {
@@ -18,7 +23,7 @@ public class KeyManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             LoadKeys();
         }
-        else
+        else if (instance != this) 
         {
             Destroy(gameObject);
         }
