@@ -40,7 +40,7 @@ public class WaterWell : MonoBehaviour
         }
 
 
-        if (isPlayerInRange && isReady && Input.GetKeyDown(KeyCode.E))
+        if (isPlayerInRange && isReady && Input.GetKeyDown(KeyManager.instance.interactKey))
         {
             if (playerInventory != null)
             {

@@ -32,7 +32,7 @@ public class CollectableItem : MonoBehaviour
 
     void Update()
     {
-        if (!isCollected && isPlayerInRange && Input.GetKeyDown(KeyCode.E))
+        if (!isCollected && isPlayerInRange && Input.GetKeyDown(KeyManager.instance.interactKey))
         {
             PickUp();
         }

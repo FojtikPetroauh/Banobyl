@@ -13,7 +13,7 @@ public class SimpleInventory : MonoBehaviour
     {
         if (Time.timeScale == 0f) return;
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyManager.instance.eatKey))
         {
             if(berriesCount > 0)
             {
@@ -23,7 +23,7 @@ public class SimpleInventory : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyManager.instance.drinkKey))
         {
             if(waterCount > 0)
             {

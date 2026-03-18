@@ -33,7 +33,7 @@ public class Campfire : MonoBehaviour
     {
         if (Time.timeScale == 0f) return;
         
-        if (isPlayerInRange && !isLit && Input.GetKeyDown(KeyCode.E))
+        if (isPlayerInRange && !isLit && Input.GetKeyDown(KeyManager.instance.interactKey))
         {
             if (playerInventory != null && playerInventory.woodCount > 0)
             {
