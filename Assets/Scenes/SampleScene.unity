@@ -251009,33 +251009,33 @@ MonoBehaviour:
   dayNightColor:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 0}
-    key1: {r: 0.33057183, g: 0.09955849, b: 0.6679245, a: 0.5882353}
-    key2: {r: 1, g: 1, b: 1, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
+    key1: {r: 1, g: 1, b: 1, a: 0}
+    key2: {r: 0.33057183, g: 0.09955849, b: 0.6679245, a: 0.78431374}
+    key3: {r: 1, g: 1, b: 1, a: 0}
+    key4: {r: 1, g: 1, b: 1, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 32768
-    ctime2: 65535
-    ctime3: 0
-    ctime4: 0
+    ctime1: 16384
+    ctime2: 32768
+    ctime3: 49151
+    ctime4: 65535
     ctime5: 0
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 32768
-    atime2: 65535
-    atime3: 0
-    atime4: 0
+    atime1: 16384
+    atime2: 32768
+    atime3: 49151
+    atime4: 65535
     atime5: 0
     atime6: 0
     atime7: 0
     m_Mode: 0
     m_ColorSpace: -1
-    m_NumColorKeys: 3
-    m_NumAlphaKeys: 3
+    m_NumColorKeys: 5
+    m_NumAlphaKeys: 5
   daysBeforeWinter: 3
   winterColor:
     serializedVersion: 2
@@ -259118,6 +259118,7 @@ GameObject:
   - component: {fileID: 976106845}
   - component: {fileID: 976106846}
   - component: {fileID: 976106847}
+  - component: {fileID: 976106848}
   m_Layer: 20
   m_Name: Player
   m_TagString: Player
@@ -259173,8 +259174,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.02350691, y: 0.007358551}
-  m_Size: {x: 0.321047, y: 0.9852829}
+  m_Offset: {x: 0.017922431, y: -0.1642771}
+  m_Size: {x: 0.29737288, y: 0.6420116}
   m_Direction: 0
 --- !u!50 &976106842
 Rigidbody2D:
@@ -259250,7 +259251,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: e725a21ac4a1bea479fa8051f3686283, type: 3}
+  m_Sprite: {fileID: 7152930139536384079, guid: bee2621d9444bee4f9284968d869c61f,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -259352,6 +259354,28 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976106839}
   m_Enabled: 1
+--- !u!95 &976106848
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976106839}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4266014b803b08f43945cb49162413e5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &979939004
 GameObject:
   m_ObjectHideFlags: 0
