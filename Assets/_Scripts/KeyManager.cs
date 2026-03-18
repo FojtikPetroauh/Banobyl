@@ -43,4 +43,13 @@ public class KeyManager : MonoBehaviour
         PlayerPrefs.SetString("DrinkKey", drinkKey.ToString());
         PlayerPrefs.Save();
     }
+
+    public string GetCleanKeyName(KeyCode key)
+    {
+        string keyName = key.ToString();
+        keyName = keyName.Replace("Alpha", "");
+        keyName = keyName.Replace("Keypad", "Num ");
+
+        return keyName;
+    }
 }

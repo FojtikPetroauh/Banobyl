@@ -8,14 +8,13 @@ public class HUDHints : MonoBehaviour
 
     void Update()
     {
-        
         if (KeyManager.instance != null)
         {
             if (eatHintText != null) 
-                eatHintText.text = "[" + KeyManager.instance.eatKey.ToString() + "]";
+                eatHintText.text = "[ " + KeyManager.instance.GetCleanKeyName(KeyManager.instance.eatKey) + " ]";
                 
             if (drinkHintText != null) 
-                drinkHintText.text = "[" + KeyManager.instance.drinkKey.ToString() + "]";
+                drinkHintText.text = "[ " + KeyManager.instance.GetCleanKeyName(KeyManager.instance.drinkKey) + " ]";
         }
     }
 }

@@ -14,7 +14,7 @@ public class DynamicPrompt : MonoBehaviour
     {
         if (KeyManager.instance != null && myText != null)
         {
-            myText.text = "[ " + KeyManager.instance.interactKey.ToString() + " ]";
+            myText.text = "[ " + KeyManager.instance.GetCleanKeyName(KeyManager.instance.interactKey) + " ]";
         }
     }
 }

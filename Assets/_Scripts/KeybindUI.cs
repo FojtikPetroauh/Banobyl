@@ -55,9 +55,9 @@ public class KeybindUI : MonoBehaviour
 
     public void UpdateUI()
     {
-        if (interactText != null) interactText.text = KeyManager.instance.interactKey.ToString();
-        if (eatText != null) eatText.text = KeyManager.instance.eatKey.ToString();
-        if (drinkText != null) drinkText.text = KeyManager.instance.drinkKey.ToString();
+        if (interactText != null) interactText.text = KeyManager.instance.GetCleanKeyName(KeyManager.instance.interactKey);
+        if (eatText != null) eatText.text = KeyManager.instance.GetCleanKeyName(KeyManager.instance.eatKey);
+        if (drinkText != null) drinkText.text = KeyManager.instance.GetCleanKeyName(KeyManager.instance.drinkKey);
     }
 
     private void DelayedUpdateUI()
