@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectableItem
   type: 0
-  amount: 3
+  amount: 1
   visualPrompt: {fileID: 5780353014431025285}
   canRespawn: 1
   respawnTime: 120

@@ -369,4 +369,4 @@ MonoBehaviour:
   amount: 1
   visualPrompt: {fileID: 2040450449406334477}
   canRespawn: 1
-  respawnTime: 120
+  respawnTime: 60

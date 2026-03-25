@@ -6,22 +6,22 @@ public class SurvivalManager : MonoBehaviour
     [Header("Health")]
     public float maxHealth = 100f;
     public float currentHealth;
-    public float healthDepletionRate = 2f;
+    public float healthDepletionRate = 4f;
 
     [Header("Hunger")]
     public float maxHunger = 100f;
     public float currentHunger;
-    public float hungerDepletionRate = 0.5f;
+    public float hungerDepletionRate = 1.5f;
 
     [Header("Thirst")]
     public float maxThirst = 100f;
     public float currentThirst;
-    public float thirstDepletionRate = 0.5f;
+    public float thirstDepletionRate = 1f;
 
     [Header("Warmth")]
     public float maxWarmth = 100f;
     public float currentWarmth;
-    public float warmthDepletionRate = 0.5f;
+    public float warmthDepletionRate = 2f;
 
     public float healthPercent => currentHealth / maxHealth;
     public float hungerPercent => currentHunger / maxHunger;
